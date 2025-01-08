@@ -7,9 +7,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    /* gap: 30px; */
     background-color: #212121;
     font-family: monospace;
     color: #fff;
+    overflow: hidden;
+    margin: 30px;
 }
 
 #bg {
@@ -20,18 +24,27 @@ body {
     z-index: -1;
 }
 
-main {
+main, .outSec {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 60%;
-    height: 60%;
+    height: min(60%);
     padding: 20px;
     border: 1px solid #ffffff46;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #00000060;
+    /* border-radius: 5px; */
+    /* box-shadow: 0 0 10px #00000060; */
     background-color: #42424266;
     backdrop-filter: blur(20px);
+}
+
+main {
+    border-radius: 20px 0 0 20px;
+}
+
+.outSec {
+    gap: 20px;
+    border-radius: 0 20px 20px 0;
 }
 
 h1 {
@@ -61,5 +74,53 @@ button {
     background-color: #212121;
     color: #fff;
     font-size: 16px;
+    transition: all 0.2s;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #44286e;
+}
+
+#download {
+    display: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #212121;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#download:hover {
+    background-color: #44286e;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.controls label {
+    font-size: 14px;
+}
+
+.controls input[type="color"],
+.controls input[type="number"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #424242;
+    outline: 1px solid #ffffff7e;
+    color: #fff;
+    font-size: 16px;
 }
